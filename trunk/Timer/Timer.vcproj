@@ -21,7 +21,7 @@
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			UseOfMFC="2"
-			CharacterSet="2"
+			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -103,7 +103,7 @@
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			UseOfMFC="2"
-			CharacterSet="2"
+			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -214,15 +214,19 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\SystemTray.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\TimerApp.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\TimerDlg.cpp"
+				RelativePath=".\TimerEvent.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TimerEventDlg.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\TimerIcon.cpp"
 				>
 			</File>
 		</Filter>
@@ -236,7 +240,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Resource.h"
+				RelativePath=".\resource.h"
 				>
 			</File>
 			<File
@@ -244,15 +248,19 @@
 				>
 			</File>
 			<File
-				RelativePath=".\SystemTray.h"
-				>
-			</File>
-			<File
 				RelativePath=".\TimerApp.h"
 				>
 			</File>
 			<File
-				RelativePath=".\TimerDlg.h"
+				RelativePath=".\TimerEvent.h"
+				>
+			</File>
+			<File
+				RelativePath=".\TimerEventDlg.h"
+				>
+			</File>
+			<File
+				RelativePath=".\TimerIcon.h"
 				>
 			</File>
 		</Filter>
