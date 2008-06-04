@@ -15,20 +15,8 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_62D135B0280F43DA903BBD804259ACE7"
-        "OwnerKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_63322134E3924423B0D45E3B530A2249"
-        "OwnerKey" = "8:_6507B39AFA1E411EB2537326618B1153"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6507B39AFA1E411EB2537326618B1153"
-        "OwnerKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
+        "MsmKey" = "8:_5F56FA1C258F4E84A2BFEEBC60C68491"
+        "OwnerKey" = "8:_AA40C238502B44E8AC405AAB8FC6D7CB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,26 +27,32 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_89A9806FF09D427DA825B132838120D5"
-        "OwnerKey" = "8:_62D135B0280F43DA903BBD804259ACE7"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_94F60AB74A124068B19C93E9B660E6E2"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_AA40C238502B44E8AC405AAB8FC6D7CB"
+        "OwnerKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D806DD6E8B5C4D2D940BB8C6774C87F0"
+        "OwnerKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_F1114CC73D7648E7A8BE7AF64F0F13BD"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FA2F789B23E7451581B00297690A59D0"
+        "OwnerKey" = "8:_D806DD6E8B5C4D2D940BB8C6774C87F0"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -163,26 +157,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_94F60AB74A124068B19C93E9B660E6E2"
-            {
-            "SourcePath" = "8:StartMe.bat"
-            "TargetName" = "8:StartMe.bat"
-            "Tag" = "8:"
-            "Folder" = "8:_AE15B6EA176C45438D9E4FC6E69D83FC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F1114CC73D7648E7A8BE7AF64F0F13BD"
             {
             "SourcePath" = "8:Mareq Web Site.url"
@@ -239,17 +213,6 @@
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:TARGETDIR"
-                "Folders"
-                {
-                }
-            }
-            "{1525181F-901A-416C-8A58-119130FE478E}:_F125A6D994474F62811076C4F0FDD727"
-            {
-            "Name" = "8:#1928"
-            "AlwaysCreate" = "11:FALSE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Property" = "8:StartupFolder"
                 "Folders"
                 {
                 }
@@ -387,20 +350,6 @@
             "Folder" = "8:_C412FA802E224C279AEAD0009665D13A"
             "WorkingFolder" = "8:_AE15B6EA176C45438D9E4FC6E69D83FC"
             "Icon" = "8:_92AEF6C084D340989AEB2A4A11287A16"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_808AC502B35B4E1989AAFA9469C2269A"
-            {
-            "Name" = "8:Mareq Timer"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_92AEF6C084D340989AEB2A4A11287A16"
-            "Folder" = "8:_F125A6D994474F62811076C4F0FDD727"
-            "WorkingFolder" = "8:_AE15B6EA176C45438D9E4FC6E69D83FC"
-            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
@@ -799,21 +748,7 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_62D135B0280F43DA903BBD804259ACE7"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:Microsoft_VC80_MFC_x86.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:0"
-            "Exclude" = "11:FALSE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_63322134E3924423B0D45E3B530A2249"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_5F56FA1C258F4E84A2BFEEBC60C68491"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
@@ -827,7 +762,7 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_6507B39AFA1E411EB2537326618B1153"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_AA40C238502B44E8AC405AAB8FC6D7CB"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
@@ -841,7 +776,21 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_89A9806FF09D427DA825B132838120D5"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_D806DD6E8B5C4D2D940BB8C6774C87F0"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "SourcePath" = "8:Microsoft_VC80_MFC_x86.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_FA2F789B23E7451581B00297690A59D0"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
