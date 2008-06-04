@@ -13,6 +13,8 @@
 #define IDC_EDIT_ACTION                 1008
 #define IDC_CHECK_ENABLED               1009
 #define IDC_STATIC_TITLE                1010
+#define IDC_EDIT_ACTION2                1010
+#define IDC_EDIT_ACTION_PARAMS          1010
 #define IDC_STATIC_GOOGLECODE           1012
 #define IDC_STATIC_MAREQ_COM            1013
 #define IDC_STATIC_MAREQ_SK             1014

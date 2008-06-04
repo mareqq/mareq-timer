@@ -28,15 +28,19 @@ void CEventDlg::DoDataExchange(CDataExchange* pDX)
     DDX_DateTimeCtrl(pDX, IDC_DATETIMEPICKER_REPEAT, m_IntervalTime);
     DDX_Check(pDX, IDC_CHECK_ENABLED, m_bEnabled);
     DDX_Control(pDX, ID_DELETE, m_DeleteCtrl);
-    DDX_Text(pDX, IDC_EDIT_MESSAGE, m_strMessage);
-    DDX_Text(pDX, IDC_EDIT_ACTION, m_strAction);
     DDX_Control(pDX, IDOK, m_OkCtrl);
     DDX_Control(pDX, IDC_DATETIMEPICKER_REPEAT, m_IntervalTimeCtrl);
+    DDX_Control(pDX, IDC_EDIT_ACTION, m_ActionCtrl);
+    DDX_Control(pDX, IDC_EDIT_ACTION_PARAMS, m_ActionParamsCtrl);
+    DDX_Text(pDX, IDC_EDIT_MESSAGE, m_strMessage);
+    DDX_Text(pDX, IDC_EDIT_ACTION, m_strAction);
+    DDX_Text(pDX, IDC_EDIT_ACTION_PARAMS, m_strActionParams);
 }
 
 BEGIN_MESSAGE_MAP(CEventDlg, CDialog)
     ON_BN_CLICKED(ID_DELETE, &CEventDlg::OnBnClickedDelete)
     ON_BN_CLICKED(ID_TEST, &CEventDlg::OnBnClickedTest)
+    ON_EN_CHANGE(IDC_EDIT_ACTION, &CEventDlg::OnEnChangeEditAction)
 END_MESSAGE_MAP()
 
 BOOL CEventDlg::OnInitDialog()
@@ -63,6 +67,7 @@ BOOL CEventDlg::OnInitDialog()
         m_OkCtrl.SetWindowText(_T("&OK"));
     }
 
+    OnEnChangeEditAction();
 	return TRUE;
 }
 
@@ -106,6 +111,7 @@ void CEventDlg::SetEdit(HICON hIcon, CTimerEvent timerEvent)
 
     m_strMessage = timerEvent.GetMessage();
     m_strAction = timerEvent.GetAction();
+    m_strActionParams = timerEvent.GetActionParams();
 }
 
 CTimerEvent CEventDlg::GetTimerEvent()
@@ -121,5 +127,13 @@ CTimerEvent CEventDlg::GetTimerEvent()
 
     timerEvent.SetMessage(m_strMessage);
     timerEvent.SetAction(m_strAction);
+    timerEvent.SetActionParams(m_strActionParams);
     return timerEvent;
+}
+
+void CEventDlg::OnEnChangeEditAction()
+{
+    CString str;
+    m_ActionCtrl.GetWindowText(str);
+    m_ActionParamsCtrl.EnableWindow(!str.IsEmpty());
 }
