@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "StaticLink.h"
 
+#pragma warning(disable: 4311)
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -40,11 +42,15 @@ HBRUSH CStaticLink::CtlColor(CDC* pDC, UINT nCtlColor)
     {
 
         // Font.
-        if (!(HFONT)m_Font) {
+        if (!(HFONT)m_Font)
+        {
             LOGFONT lf;
             GetFont()->GetObject(sizeof(lf), &lf);
             lf.lfUnderline = TRUE;
             m_Font.CreateFontIndirect(&lf);
+
+            HCURSOR hCursor = LoadCursor(NULL, MAKEINTRESOURCE(IDC_HAND));
+            SetClassLong(m_hWnd, GCL_HCURSOR, (LONG)hCursor);
         }
 
         // Font and color.

@@ -105,7 +105,7 @@ BEGIN
     LTEXT           "http://mareq-timer.googlecode.com",IDC_STATIC_GOOGLECODE,7,33,213,8
     LTEXT           "http://www.mareq.com",IDC_STATIC_MAREQ_COM,7,41,213,8
     LTEXT           "http://www.mareq.sk",IDC_STATIC_MAREQ_SK,7,49,213,8
-    LTEXT           "Notify icon based on: Chris Maunder, http://www.codeproject.com\nStatic link based on: Paul DiLascia, http://www.dilascia.com\nIcons by: FastIcon.com, http://www.fasticon.com",IDC_STATIC,7,65,213,27,SS_NOPREFIX | WS_DISABLED
+    LTEXT           "Notify icon based on: Chris Maunder, http://www.codeproject.com\nStatic link based on: Paul DiLascia, http://www.dilascia.com\nIcons by: FastIcon.com, http://www.fasticon.com",IDC_STATIC,7,65,213,27,WS_DISABLED
     DEFPUSHBUTTON   "&OK",IDOK,170,7,50,16
 END
 
@@ -116,8 +116,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,1
- PRODUCTVERSION 1,0,0,1
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -134,12 +134,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Mareq"
             VALUE "FileDescription", "Mareq Timer Executable"
-            VALUE "FileVersion", "1.0.0.1"
+            VALUE "FileVersion", "1.0.0.0"
             VALUE "InternalName", "Timer.exe"
             VALUE "LegalCopyright", "Copyright (c) 2008 Mareq.  All rights reserved."
             VALUE "OriginalFilename", "Timer.exe"
             VALUE "ProductName", "Mareq Timer"
-            VALUE "ProductVersion", "1.0.0.1"
+            VALUE "ProductVersion", "1.0.0.0"
         END
     END
     BLOCK "VarFileInfo"
