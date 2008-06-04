@@ -15,32 +15,32 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_08615171AD494FAD843909C1E3062B48"
+        "OwnerKey" = "8:_434A4993A7744C219089B38EBA343850"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1CF230BDD3CF4391AE3DDA12B33CA4C2"
+        "OwnerKey" = "8:_CE7721B3E3B04360A17B9EFDE74E83BA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_434A4993A7744C219089B38EBA343850"
+        "OwnerKey" = "8:_5BC6288551D24776BC48BA3F2995997B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5BC6288551D24776BC48BA3F2995997B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A652A9D869694128BE134077F7A022FC"
+        "MsmKey" = "8:_CE7721B3E3B04360A17B9EFDE74E83BA"
         "OwnerKey" = "8:_5BC6288551D24776BC48BA3F2995997B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C23104F3E7CF493692E3B92147201E0F"
-        "OwnerKey" = "8:_CBB520EBDE16455297D3924EFC8EA89C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CBB520EBDE16455297D3924EFC8EA89C"
-        "OwnerKey" = "8:_5BC6288551D24776BC48BA3F2995997B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D1F78803B76740E58BEDE62F09059A94"
-        "OwnerKey" = "8:_A652A9D869694128BE134077F7A022FC"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -203,10 +203,10 @@
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://www.mareq.sk"
         "Title" = "8:Mareq Timer Setup"
-        "Subject" = "8:Timer software."
+        "Subject" = "8:Mareq Timer software."
         "ARPCONTACT" = "8:Mareq"
         "Keywords" = "8:Time Timer"
-        "ARPCOMMENTS" = "8:Mareq Timer software installer."
+        "ARPCOMMENTS" = "8:Mareq Timer software."
         "ARPURLINFOABOUT" = "8:http://www.mareq.sk"
         "ARPPRODUCTICON" = "8:_5BC6288551D24776BC48BA3F2995997B"
         "ARPIconIndex" = "3:128"
@@ -735,11 +735,11 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_A652A9D869694128BE134077F7A022FC"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_08615171AD494FAD843909C1E3062B48"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:Microsoft_VC80_MFC_x86.msm"
+            "SourcePath" = "8:policy_8_0_microsoft_vc80_debugcrt_x86.msm"
                 "Properties"
                 {
                 }
@@ -749,11 +749,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_C23104F3E7CF493692E3B92147201E0F"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_1CF230BDD3CF4391AE3DDA12B33CA4C2"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:policy_8_0_microsoft_vc80_crt_x86.msm"
+            "SourcePath" = "8:policy_8_0_microsoft_vc80_debugmfc_x86.msm"
                 "Properties"
                 {
                 }
@@ -763,11 +763,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_CBB520EBDE16455297D3924EFC8EA89C"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_434A4993A7744C219089B38EBA343850"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:Microsoft_VC80_CRT_x86.msm"
+            "SourcePath" = "8:Microsoft_VC80_DebugCRT_x86.msm"
                 "Properties"
                 {
                 }
@@ -777,11 +777,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_D1F78803B76740E58BEDE62F09059A94"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_CE7721B3E3B04360A17B9EFDE74E83BA"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:policy_8_0_microsoft_vc80_mfc_x86.msm"
+            "SourcePath" = "8:Microsoft_VC80_DebugMFC_x86.msm"
                 "Properties"
                 {
                 }
@@ -796,7 +796,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5BC6288551D24776BC48BA3F2995997B"
             {
-            "SourcePath" = "8:..\\release\\Timer.exe"
+            "SourcePath" = "8:..\\Debug\\Timer.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_AE15B6EA176C45438D9E4FC6E69D83FC"

@@ -29,13 +29,13 @@ CTimerWnd::~CTimerWnd()
 }
 
 BEGIN_MESSAGE_MAP(CTimerWnd, CWnd)
-    ON_COMMAND(ID_ADD, &CTimerWnd::OnAdd)
-    ON_COMMAND_RANGE(1, ID_ADD - 1, &CTimerWnd::OnEdit)
-    ON_COMMAND(ID_ADD, &CTimerWnd::OnDeleteAllOld)
-    ON_COMMAND(ID_ABOUT, &CTimerWnd::OnAbout)
-    ON_COMMAND(ID_EXIT, &CTimerWnd::OnExit)
     ON_MESSAGE(WM_NOTIFY_ICON, &CTimerWnd::OnNotifyIcon)
     ON_WM_TIMER()
+    ON_COMMAND(ID_ADD, &CTimerWnd::OnAdd)
+    ON_COMMAND_RANGE(1, ID_ADD - 1, &CTimerWnd::OnEdit)
+    ON_COMMAND(ID_DELETE_ALL_OLD, &CTimerWnd::OnDeleteAllOld)
+    ON_COMMAND(ID_ABOUT, &CTimerWnd::OnAbout)
+    ON_COMMAND(ID_EXIT, &CTimerWnd::OnExit)
 END_MESSAGE_MAP()
 
 bool CTimerWnd::Create()
@@ -171,6 +171,15 @@ void CTimerWnd::OnEdit(UINT nID)
 
 void CTimerWnd::OnDeleteAllOld()
 {
+    for (int i = 0; i < m_TimerEvents.GetCount(); i++)
+    {
+        if (m_TimerEvents[i].IsOld())
+        {
+            m_TimerEvents.RemoveAt(i--);
+            continue;
+        }
+    }
+    SaveTimerEvents();
 }
 
 void CTimerWnd::OnAbout()
@@ -219,18 +228,35 @@ bool CTimerWnd::ShowBalloon(CString strMessage, int id)
 
 void CTimerWnd::CustomizeMenu(CMenu &menu)
 {
+    // Events.
     for (int i = (int)m_TimerEvents.GetCount() - 1; i >= 0; i--)
     {
         CTimerEvent &timerEvent = m_TimerEvents[i];
 
         // Caption.
         CString strCaption;
-        strCaption.Format(_T("&%d %s"), i + 1, timerEvent.GetDescription());
+        if (i < 10)
+            strCaption.Format(_T("&%d %s"), i < 9 ? i + 1 : 0, timerEvent.GetDescription());
+        else
+            strCaption.Format(_T("   %s"), timerEvent.GetDescription());
         menu.InsertMenu(1, MF_BYPOSITION|MF_STRING, i + 1, strCaption);
 
         // Check.
         menu.CheckMenuItem(1, MF_BYPOSITION|(timerEvent.GetEnabled() ? MF_CHECKED : MF_UNCHECKED));
     }
+
+    // Enable delete all old.
+    UINT nEnable = MF_DISABLED|MF_GRAYED;
+    for (int i = 0; i < m_TimerEvents.GetCount(); i++)
+    {
+        if (m_TimerEvents[i].IsOld())
+        {
+            nEnable = MF_ENABLED;
+            break;
+        }
+    }
+
+    menu.EnableMenuItem(ID_DELETE_ALL_OLD, MF_BYCOMMAND|nEnable);
 }
 
 UINT_PTR CTimerWnd::ShowModalDialog(int id, CDialog &dlg)

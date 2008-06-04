@@ -25,6 +25,7 @@ bool CTimerEvent::Load(int id)
     m_RepeatInterval = theApp.GetProfileInt(strSection, PROFILE_EVENT_REPEAT, 0);
     m_strMessage = theApp.GetProfileString(strSection, PROFILE_EVENT_MESSAGE);
     m_strAction = theApp.GetProfileString(strSection, PROFILE_EVENT_ACTION);
+    m_strActionParams = theApp.GetProfileString(strSection, PROFILE_EVENT_ACTION_PARAMS);
 
     return IsValid();
 }
@@ -39,6 +40,7 @@ void CTimerEvent::Save(int id)
     theApp.WriteProfileInt(strSection, PROFILE_EVENT_REPEAT, m_RepeatInterval);
     theApp.WriteProfileString(strSection, PROFILE_EVENT_MESSAGE, m_strMessage);
     theApp.WriteProfileString(strSection, PROFILE_EVENT_ACTION, m_strAction);
+    theApp.WriteProfileString(strSection, PROFILE_EVENT_ACTION_PARAMS, m_strActionParams);
 }
 
 bool CTimerEvent::IsValid()
@@ -112,21 +114,8 @@ void CTimerEvent::Activate(CTimerWnd &timerWnd, int id)
     // Run action.
     if (!m_strAction.IsEmpty())
     {
-        HINSTANCE hInst = ShellExecute(NULL, _T("open"), m_strAction, NULL, NULL, 0);
+        HINSTANCE hInst = ShellExecute(NULL, _T("open"), m_strAction, m_strActionParams, NULL, 0);
         if ((int)hInst <= 32)
-/*
-        STARTUPINFO si = {0};
-        si.cb = sizeof(si);
-        si.lpTitle = _T("Mareq Timer Action");
-
-        PROCESS_INFORMATION pi = {0};
-        if (CreateProcess(_T("start"), (LPTSTR)(LPCTSTR)m_strMessage, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
-        {
-            CloseHandle(pi.hProcess);
-            CloseHandle(pi.hThread);
-        }
-        else
-*/
         {
             CString str;
             str.Format(_T("Unable to run \"%s%s\""), m_strAction.GetLength() > DESCRIPTION_ACTION_MAX ? _T("...") : _T(""),
@@ -136,3 +125,9 @@ void CTimerEvent::Activate(CTimerWnd &timerWnd, int id)
         }
     }
 }
+
+bool CTimerEvent::IsOld()
+{
+    return !m_RepeatInterval && m_BaseDateTime < COleDateTime::GetCurrentTime();
+}
+

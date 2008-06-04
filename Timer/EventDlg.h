@@ -22,10 +22,13 @@ protected:
 
     afx_msg void OnBnClickedTest();
     afx_msg void OnBnClickedDelete();
+    afx_msg void OnEnChangeEditAction();
 	DECLARE_MESSAGE_MAP()
 
 protected:
     CDateTimeCtrl m_IntervalTimeCtrl;
+    CEdit m_ActionCtrl;
+    CEdit m_ActionParamsCtrl;
     CButton m_DeleteCtrl;
     CButton m_OkCtrl;
 
@@ -39,4 +42,5 @@ protected:
     COleDateTime m_IntervalTime;
     CString m_strMessage;
     CString m_strAction;
+    CString m_strActionParams;
 };
