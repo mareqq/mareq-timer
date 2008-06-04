@@ -15,32 +15,44 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_08615171AD494FAD843909C1E3062B48"
-        "OwnerKey" = "8:_434A4993A7744C219089B38EBA343850"
+        "MsmKey" = "8:_0B1E2ABDB6D6491C9795238852C013BB"
+        "OwnerKey" = "8:_6B2BF96D3F4F42A397B5DFE0D3B36D83"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_1CF230BDD3CF4391AE3DDA12B33CA4C2"
-        "OwnerKey" = "8:_CE7721B3E3B04360A17B9EFDE74E83BA"
+        "MsmKey" = "8:_4ABBAF3E1B7A4D48A459192B182C0BC6"
+        "OwnerKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_434A4993A7744C219089B38EBA343850"
-        "OwnerKey" = "8:_5BC6288551D24776BC48BA3F2995997B"
+        "MsmKey" = "8:_6B2BF96D3F4F42A397B5DFE0D3B36D83"
+        "OwnerKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5BC6288551D24776BC48BA3F2995997B"
+        "MsmKey" = "8:_7966AC9E0BE246069FF25A6DEC4593B1"
+        "OwnerKey" = "8:_4ABBAF3E1B7A4D48A459192B182C0BC6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7DFFDCB83E9C48689B1CC6D5DD2059EC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_CE7721B3E3B04360A17B9EFDE74E83BA"
-        "OwnerKey" = "8:_5BC6288551D24776BC48BA3F2995997B"
+        "MsmKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F1114CC73D7648E7A8BE7AF64F0F13BD"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -51,7 +63,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\Setup.msi"
+        "OutputFilename" = "8:..\\Debug\\Setup.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -78,7 +90,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\Setup.msi"
+        "OutputFilename" = "8:..\\Release\\Setup.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -110,6 +122,20 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_1D9BF39F35E94D04AC1F526FF80C0B15"
+            {
+            "Name" = "8:Primary Output from Timer (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_92AEF6C084D340989AEB2A4A11287A16"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:/Commit"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_222930CF_7F4B_40AE_956E_0853EA28475A"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -125,6 +151,46 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7DFFDCB83E9C48689B1CC6D5DD2059EC"
+            {
+            "SourcePath" = "8:Timer Web Site.url"
+            "TargetName" = "8:Timer Web Site.url"
+            "Tag" = "8:"
+            "Folder" = "8:_C412FA802E224C279AEAD0009665D13A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F1114CC73D7648E7A8BE7AF64F0F13BD"
+            {
+            "SourcePath" = "8:Mareq Web Site.url"
+            "TargetName" = "8:Mareq Web Site.url"
+            "Tag" = "8:"
+            "Folder" = "8:_C412FA802E224C279AEAD0009665D13A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:TRUE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -192,7 +258,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Mareq Timer"
         "ProductCode" = "8:{99DE742E-A376-4F87-B278-8287083D0B1B}"
-        "PackageCode" = "8:{297A558B-509E-4FB9-AEE5-2FCA50A396FA}"
+        "PackageCode" = "8:{9A3997F4-A9E6-4857-9F11-3AD3ABFBD053}"
         "UpgradeCode" = "8:{DCCA879F-7AC4-440C-8AD1-D4CBDAA2C25C}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -201,14 +267,14 @@
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:Mareq"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:http://www.mareq.sk"
+        "ARPHELPLINK" = "8:http://www.mareq.com"
         "Title" = "8:Mareq Timer Setup"
         "Subject" = "8:Mareq Timer software."
         "ARPCONTACT" = "8:Mareq"
         "Keywords" = "8:Time Timer"
         "ARPCOMMENTS" = "8:Mareq Timer software."
-        "ARPURLINFOABOUT" = "8:http://www.mareq.sk"
-        "ARPPRODUCTICON" = "8:_5BC6288551D24776BC48BA3F2995997B"
+        "ARPURLINFOABOUT" = "8:http://www.mareq.com"
+        "ARPPRODUCTICON" = "8:_92AEF6C084D340989AEB2A4A11287A16"
         "ARPIconIndex" = "3:128"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -223,34 +289,6 @@
             {
                 "Keys"
                 {
-                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_7E55E6090DF541A4BBA99BF8C3D0265B"
-                    {
-                    "Name" = "8:Software"
-                    "Condition" = "8:"
-                    "AlwaysCreate" = "11:FALSE"
-                    "DeleteAtUninstall" = "11:FALSE"
-                    "Transitive" = "11:FALSE"
-                        "Keys"
-                        {
-                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_99E29684AF924503946E31F871C6CAA7"
-                            {
-                            "Name" = "8:[Manufacturer]"
-                            "Condition" = "8:"
-                            "AlwaysCreate" = "11:FALSE"
-                            "DeleteAtUninstall" = "11:FALSE"
-                            "Transitive" = "11:FALSE"
-                                "Keys"
-                                {
-                                }
-                                "Values"
-                                {
-                                }
-                            }
-                        }
-                        "Values"
-                        {
-                        }
-                    }
                 }
             }
             "HKCU"
@@ -275,6 +313,20 @@
                             "Transitive" = "11:FALSE"
                                 "Keys"
                                 {
+                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_9E33E23B28374387A1B10ABA5BED3A27"
+                                    {
+                                    "Name" = "8:Timer"
+                                    "Condition" = "8:"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "DeleteAtUninstall" = "11:FALSE"
+                                    "Transitive" = "11:FALSE"
+                                        "Keys"
+                                        {
+                                        }
+                                        "Values"
+                                        {
+                                        }
+                                    }
                                 }
                                 "Values"
                                 {
@@ -311,21 +363,21 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7C0F0060594947A0B67B695C451DB3D7"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7727E6E419F54210A600CB1395AB3E31"
             {
             "Name" = "8:Timer"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
+            "IconIndex" = "3:128"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_5BC6288551D24776BC48BA3F2995997B"
+            "Target" = "8:_92AEF6C084D340989AEB2A4A11287A16"
             "Folder" = "8:_C412FA802E224C279AEAD0009665D13A"
             "WorkingFolder" = "8:_AE15B6EA176C45438D9E4FC6E69D83FC"
-            "Icon" = "8:"
+            "Icon" = "8:_92AEF6C084D340989AEB2A4A11287A16"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8A4E693404EB4EA781872809D26A7253"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_808AC502B35B4E1989AAFA9469C2269A"
             {
             "Name" = "8:Mareq Timer"
             "Arguments" = "8:"
@@ -333,7 +385,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_5BC6288551D24776BC48BA3F2995997B"
+            "Target" = "8:_92AEF6C084D340989AEB2A4A11287A16"
             "Folder" = "8:_F125A6D994474F62811076C4F0FDD727"
             "WorkingFolder" = "8:_AE15B6EA176C45438D9E4FC6E69D83FC"
             "Icon" = "8:"
@@ -735,11 +787,11 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_08615171AD494FAD843909C1E3062B48"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_0B1E2ABDB6D6491C9795238852C013BB"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:policy_8_0_microsoft_vc80_debugcrt_x86.msm"
+            "SourcePath" = "8:policy_8_0_microsoft_vc80_crt_x86.msm"
                 "Properties"
                 {
                 }
@@ -749,11 +801,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_1CF230BDD3CF4391AE3DDA12B33CA4C2"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_4ABBAF3E1B7A4D48A459192B182C0BC6"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:policy_8_0_microsoft_vc80_debugmfc_x86.msm"
+            "SourcePath" = "8:Microsoft_VC80_MFC_x86.msm"
                 "Properties"
                 {
                 }
@@ -763,11 +815,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_434A4993A7744C219089B38EBA343850"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_6B2BF96D3F4F42A397B5DFE0D3B36D83"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:Microsoft_VC80_DebugCRT_x86.msm"
+            "SourcePath" = "8:Microsoft_VC80_CRT_x86.msm"
                 "Properties"
                 {
                 }
@@ -777,11 +829,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_CE7721B3E3B04360A17B9EFDE74E83BA"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_7966AC9E0BE246069FF25A6DEC4593B1"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:Microsoft_VC80_DebugMFC_x86.msm"
+            "SourcePath" = "8:policy_8_0_microsoft_vc80_mfc_x86.msm"
                 "Properties"
                 {
                 }
@@ -794,9 +846,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5BC6288551D24776BC48BA3F2995997B"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_92AEF6C084D340989AEB2A4A11287A16"
             {
-            "SourcePath" = "8:..\\Debug\\Timer.exe"
+            "SourcePath" = "8:..\\Release\\Timer.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_AE15B6EA176C45438D9E4FC6E69D83FC"

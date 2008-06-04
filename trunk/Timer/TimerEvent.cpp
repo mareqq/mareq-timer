@@ -3,6 +3,8 @@
 #include "TimerApp.h"
 #include "math.h"
 
+#pragma warning(disable: 4311)
+
 CTimerEvent::CTimerEvent()
 :
     m_bEnabled(true),
