@@ -15,26 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0B1E2ABDB6D6491C9795238852C013BB"
-        "OwnerKey" = "8:_6B2BF96D3F4F42A397B5DFE0D3B36D83"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4ABBAF3E1B7A4D48A459192B182C0BC6"
+        "MsmKey" = "8:_62D135B0280F43DA903BBD804259ACE7"
         "OwnerKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_6B2BF96D3F4F42A397B5DFE0D3B36D83"
-        "OwnerKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
+        "MsmKey" = "8:_63322134E3924423B0D45E3B530A2249"
+        "OwnerKey" = "8:_6507B39AFA1E411EB2537326618B1153"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7966AC9E0BE246069FF25A6DEC4593B1"
-        "OwnerKey" = "8:_4ABBAF3E1B7A4D48A459192B182C0BC6"
+        "MsmKey" = "8:_6507B39AFA1E411EB2537326618B1153"
+        "OwnerKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -45,7 +39,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_89A9806FF09D427DA825B132838120D5"
+        "OwnerKey" = "8:_62D135B0280F43DA903BBD804259ACE7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_92AEF6C084D340989AEB2A4A11287A16"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_94F60AB74A124068B19C93E9B660E6E2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -122,20 +128,6 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_1D9BF39F35E94D04AC1F526FF80C0B15"
-            {
-            "Name" = "8:Primary Output from Timer (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_92AEF6C084D340989AEB2A4A11287A16"
-            "FileType" = "3:2"
-            "InstallAction" = "3:2"
-            "Arguments" = "8:/Commit"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_222930CF_7F4B_40AE_956E_0853EA28475A"
-            "InstallerClass" = "11:FALSE"
-            "CustomActionData" = "8:"
-            }
         }
         "DefaultFeature"
         {
@@ -168,6 +160,26 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_94F60AB74A124068B19C93E9B660E6E2"
+            {
+            "SourcePath" = "8:StartMe.bat"
+            "TargetName" = "8:StartMe.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_AE15B6EA176C45438D9E4FC6E69D83FC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
@@ -787,21 +799,7 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_0B1E2ABDB6D6491C9795238852C013BB"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:policy_8_0_microsoft_vc80_crt_x86.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:0"
-            "Exclude" = "11:FALSE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_4ABBAF3E1B7A4D48A459192B182C0BC6"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_62D135B0280F43DA903BBD804259ACE7"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
@@ -815,7 +813,21 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_6B2BF96D3F4F42A397B5DFE0D3B36D83"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_63322134E3924423B0D45E3B530A2249"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "SourcePath" = "8:policy_8_0_microsoft_vc80_crt_x86.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_6507B39AFA1E411EB2537326618B1153"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
@@ -829,7 +841,7 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_7966AC9E0BE246069FF25A6DEC4593B1"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_89A9806FF09D427DA825B132838120D5"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
