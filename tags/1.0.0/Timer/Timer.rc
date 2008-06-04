@@ -1,0 +1,220 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Slovak resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_SKY)
+#ifdef _WIN32
+LANGUAGE LANG_SLOVAK, SUBLANG_DEFAULT
+#pragma code_page(1250)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_SKY)\r\n"
+    "LANGUAGE 27, 1\r\n"
+    "#pragma code_page(1250)\r\n"
+    "#include ""res\\Timer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_ICON                ICON                    "res\\Timer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EVENT DIALOGEX 0, 0, 377, 163
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "&Start date and time:",IDC_STATIC,7,9,50,29
+    CONTROL         "",IDC_MONTHCALENDAR,"SysMonthCal32",WS_TABSTOP,62,7,119,100,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_DATETIMEPICKER_TIME,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,62,109,119,15
+    LTEXT           "&Repeat every:",IDC_STATIC,196,9,50,8
+    CONTROL         "",IDC_DATETIMEPICKER_REPEAT,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | DTS_SHOWNONE | WS_TABSTOP | 0x8,251,7,119,15
+    LTEXT           "Show &message:",IDC_STATIC,196,30,50,8
+    EDITTEXT        IDC_EDIT_MESSAGE,251,30,119,54,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    LTEXT           "Ta&ke action:",IDC_STATIC,195,95,50,8
+    EDITTEXT        IDC_EDIT_ACTION,251,93,119,15,ES_AUTOHSCROLL
+    CONTROL         "&Enabled",IDC_CHECK_ENABLED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,144,106,10
+    PUSHBUTTON      "&Delete",ID_DELETE,132,140,50,16
+    DEFPUSHBUTTON   "",IDOK,266,140,50,16
+    PUSHBUTTON      "&Cancel",IDCANCEL,320,140,50,16
+    PUSHBUTTON      "&Test",ID_TEST,186,140,50,16
+    LTEXT           "Action params:",IDC_STATIC,195,111,50,8
+    EDITTEXT        IDC_EDIT_ACTION_PARAMS,251,109,119,15,ES_AUTOHSCROLL
+END
+
+IDD_ABOUT DIALOGEX 0, 0, 227, 99
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Mareq Timer"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_ICON,IDC_STATIC,7,7,20,20
+    LTEXT           "Mareq Timer",IDC_STATIC_TITLE,40,7,140,8
+    LTEXT           "Copyright (c) 2008 Mareq",IDC_STATIC,40,16,140,8
+    LTEXT           "http://mareq-timer.googlecode.com",IDC_STATIC_GOOGLECODE,7,33,213,8
+    LTEXT           "http://www.mareq.com",IDC_STATIC_MAREQ_COM,7,41,213,8
+    LTEXT           "http://www.mareq.sk",IDC_STATIC_MAREQ_SK,7,49,213,8
+    LTEXT           "Notify icon based on: Chris Maunder, http://www.codeproject.com\nStatic link based on: Paul DiLascia, http://www.dilascia.com\nIcons by: FastIcon.com, http://www.fasticon.com",IDC_STATIC,7,65,213,27,WS_DISABLED
+    DEFPUSHBUTTON   "&OK",IDOK,170,7,50,16
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Mareq"
+            VALUE "FileDescription", "Mareq Timer Executable"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "Timer.exe"
+            VALUE "LegalCopyright", "Copyright (c) 2008 Mareq.  All rights reserved."
+            VALUE "OriginalFilename", "Timer.exe"
+            VALUE "ProductName", "Mareq Timer"
+            VALUE "ProductVersion", "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_EVENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 370
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU 
+BEGIN
+    POPUP "Dummy"
+    BEGIN
+        MENUITEM "&Add...",                     ID_ADD
+        MENUITEM "&Delete all old",             ID_DELETE_ALL_OLD
+        MENUITEM SEPARATOR
+        MENUITEM "&About",                      ID_ABOUT
+        MENUITEM "&Exit",                       ID_EXIT
+    END
+END
+
+#endif    // Slovak resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_SKY)
+LANGUAGE 27, 1
+#pragma code_page(1250)
+#include "res\Timer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
