@@ -44,7 +44,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_CRT_SECURE_NO_DEPRECATE"
+				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -126,7 +126,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE"
+				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG"
 				MinimalRebuild="false"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="2"
@@ -194,6 +194,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\EventDlg.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\StaticLink.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -222,11 +230,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\TimerEventDlg.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\TimerIcon.cpp"
+				RelativePath=".\TimerWnd.cpp"
 				>
 			</File>
 		</Filter>
@@ -240,7 +244,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\EventDlg.h"
+				>
+			</File>
+			<File
 				RelativePath=".\resource.h"
+				>
+			</File>
+			<File
+				RelativePath=".\StaticLink.h"
 				>
 			</File>
 			<File
@@ -256,11 +268,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\TimerEventDlg.h"
-				>
-			</File>
-			<File
-				RelativePath=".\TimerIcon.h"
+				RelativePath=".\TimerWnd.h"
 				>
 			</File>
 		</Filter>

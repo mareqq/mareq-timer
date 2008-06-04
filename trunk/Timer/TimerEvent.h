@@ -7,6 +7,11 @@
 #define PROFILE_EVENT_MESSAGE _T("Message")
 #define PROFILE_EVENT_ACTION _T("Action")
 
+#define DESCRIPTION_MESSAGE_MAX 30
+#define DESCRIPTION_ACTION_MAX 30
+
+class CTimerWnd;
+
 class CTimerEvent
 {
 public:
@@ -29,8 +34,9 @@ public:
     void Save(int id);
     bool IsValid();
 
-    void Process(COleDateTime &lastTime, COleDateTime &currentTime);
-    void Activate();
+    CString GetDescription();
+    void Process(COleDateTime &lastTime, COleDateTime &currentTime, CTimerWnd &timerWnd, int id);
+    void Activate(CTimerWnd &timerWnd, int id);
 
 protected:
     bool m_bEnabled;

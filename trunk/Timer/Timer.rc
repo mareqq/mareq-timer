@@ -71,7 +71,7 @@ IDR_ICON                ICON                    "res\\Timer.ico"
 // Dialog
 //
 
-IDD_TIMER_EVENT DIALOGEX 0, 0, 377, 163
+IDD_EVENT DIALOGEX 0, 0, 377, 163
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
@@ -83,22 +83,28 @@ BEGIN
     CONTROL         "",IDC_DATETIMEPICKER_REPEAT,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | DTS_SHOWNONE | WS_TABSTOP | 0x8,251,7,119,15
     LTEXT           "Show &message:",IDC_STATIC,196,30,50,8
     EDITTEXT        IDC_EDIT_MESSAGE,251,30,119,70,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
-    LTEXT           "&Take action:",IDC_STATIC,196,111,50,8
+    LTEXT           "Ta&ke action:",IDC_STATIC,196,111,50,8
     EDITTEXT        IDC_EDIT_ACTION,251,109,119,15,ES_AUTOHSCROLL
+    CONTROL         "&Enabled",IDC_CHECK_ENABLED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,144,106,10
     DEFPUSHBUTTON   "&Delete",ID_DELETE,132,140,50,16
     DEFPUSHBUTTON   "",IDOK,266,140,50,16
     PUSHBUTTON      "&Cancel",IDCANCEL,320,140,50,16
-    CONTROL         "Enabled",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,144,41,10
+    DEFPUSHBUTTON   "&Test",ID_TEST,186,140,50,16
 END
 
-IDD_ABOUT DIALOGEX 0, 0, 186, 60
+IDD_ABOUT DIALOGEX 0, 0, 227, 99
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About Mareq Timer"
 FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
-    DEFPUSHBUTTON   "&OK",IDOK,129,7,50,16
     ICON            IDR_ICON,IDC_STATIC,7,7,20,20
-    LTEXT           "Mareq Timer\nCopyright (c) 2008 Mareq\n\nhttp://www.mareq.sk",IDC_STATIC,35,7,90,33
+    LTEXT           "Mareq Timer",IDC_STATIC_TITLE,40,7,140,8
+    LTEXT           "Copyright (c) 2008 Mareq",IDC_STATIC,40,16,140,8
+    LTEXT           "http://mareq-timer.googlecode.com",IDC_STATIC_GOOGLECODE,7,33,213,8
+    LTEXT           "http://www.mareq.com",IDC_STATIC_MAREQ_COM,7,41,213,8
+    LTEXT           "http://www.mareq.sk",IDC_STATIC_MAREQ_SK,7,49,213,8
+    LTEXT           "Notify icon based on: Chris Maunder, http://www.codeproject.com\nStatic link based on: Paul DiLascia, http://www.dilascia.com\nIcons by: FastIcon.com, http://www.fasticon.com",IDC_STATIC,7,65,213,27,SS_NOPREFIX | WS_DISABLED
+    DEFPUSHBUTTON   "&OK",IDOK,170,7,50,16
 END
 
 
@@ -149,12 +155,20 @@ END
 #ifdef APSTUDIO_INVOKED
 GUIDELINES DESIGNINFO 
 BEGIN
-    IDD_TIMER_EVENT, DIALOG
+    IDD_EVENT, DIALOG
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 370
         TOPMARGIN, 7
         BOTTOMMARGIN, 156
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -170,6 +184,7 @@ BEGIN
     POPUP "Dummy"
     BEGIN
         MENUITEM "&Add...",                     ID_ADD
+        MENUITEM "&Delete all old",             ID_DELETE_ALL_OLD
         MENUITEM SEPARATOR
         MENUITEM "&About",                      ID_ABOUT
         MENUITEM "&Exit",                       ID_EXIT

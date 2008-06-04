@@ -43,33 +43,96 @@ void CTimerEvent::Save(int id)
 
 bool CTimerEvent::IsValid()
 {
-    return m_BaseDateTime.GetStatus() == COleDateTime::valid
-        || m_BaseDateTime.GetStatus() == COleDateTime::null;
+    return m_BaseDateTime.GetStatus() == COleDateTime::valid;
 }
 
-void CTimerEvent::Process(COleDateTime &lastTime, COleDateTime &currentTime)
+CString CTimerEvent::GetDescription()
 {
-    if (m_BaseDateTime > lastTime ||
-        m_BaseDateTime > currentTime)
-        return;
+    CString strBase;
+    strBase.Format(_T("At %s"), m_BaseDateTime.Format());
 
-    COleDateTimeSpan lastElapsed = lastTime - m_BaseDateTime;
-    COleDateTimeSpan currentElapsed = currentTime - m_BaseDateTime;
+    CString strInterval;
+    if (m_RepeatInterval)
+        strInterval.Format(_T(" (and every %d-th second)"), m_RepeatInterval);
 
-    double last = (double)lastElapsed.GetTotalSeconds() / (double)m_RepeatInterval;
-    double current = (double)currentElapsed.GetTotalSeconds() / (double)m_RepeatInterval;
-    if (floor(last) < floor(current))
-        Activate();
-}
-
-void CTimerEvent::Activate()
-{
+    CString strMessage;
     if (!m_strMessage.IsEmpty())
     {
-        theApp.GetTimerIcon().ShowBalloon(m_strMessage);
+        strMessage.Format(_T(" show \"%s%s\""), m_strMessage.Left(DESCRIPTION_MESSAGE_MAX),
+            m_strMessage.GetLength() > DESCRIPTION_MESSAGE_MAX ? _T("...") : _T(""));
     }
 
+    CString strAnd;
+    if (!m_strMessage.IsEmpty() && !m_strAction.IsEmpty())
+        strAnd = _T(" and");
+
+    CString strAction;
     if (!m_strAction.IsEmpty())
     {
+        strAction.Format(_T(" run \"%s%s\""), m_strAction.GetLength() > DESCRIPTION_ACTION_MAX ? _T("...") : _T(""),
+            m_strAction.Right(DESCRIPTION_ACTION_MAX));
+    }
+
+    return strBase + strInterval + strMessage + strAnd + strAction + _T(".");
+}
+
+void CTimerEvent::Process(COleDateTime &lastTime, COleDateTime &currentTime, CTimerWnd &timerWnd, int id)
+{
+    // Handle repeat interval.
+    if (m_RepeatInterval &&
+        m_BaseDateTime < lastTime &&
+        m_BaseDateTime < currentTime)
+    {
+        COleDateTimeSpan lastElapsed = lastTime - m_BaseDateTime;
+        COleDateTimeSpan currentElapsed = currentTime - m_BaseDateTime;
+
+        double last = (double)lastElapsed.GetTotalSeconds() / (double)m_RepeatInterval;
+        double current = (double)currentElapsed.GetTotalSeconds() / (double)m_RepeatInterval;
+        if (floor(last) < floor(current))
+        {
+            Activate(timerWnd, id);
+            return;
+        }
+    }
+
+    // Handle base date time.
+    if (m_BaseDateTime > lastTime &&
+        m_BaseDateTime <= currentTime)
+        Activate(timerWnd, id);
+}
+
+void CTimerEvent::Activate(CTimerWnd &timerWnd, int id)
+{
+    // Show message.
+    if (!m_strMessage.IsEmpty())
+    {
+        timerWnd.ShowBalloon(m_strMessage, id);
+    }
+
+    // Run action.
+    if (!m_strAction.IsEmpty())
+    {
+        HINSTANCE hInst = ShellExecute(NULL, _T("open"), m_strAction, NULL, NULL, 0);
+        if ((int)hInst <= 32)
+/*
+        STARTUPINFO si = {0};
+        si.cb = sizeof(si);
+        si.lpTitle = _T("Mareq Timer Action");
+
+        PROCESS_INFORMATION pi = {0};
+        if (CreateProcess(_T("start"), (LPTSTR)(LPCTSTR)m_strMessage, NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+        {
+            CloseHandle(pi.hProcess);
+            CloseHandle(pi.hThread);
+        }
+        else
+*/
+        {
+            CString str;
+            str.Format(_T("Unable to run \"%s%s\""), m_strAction.GetLength() > DESCRIPTION_ACTION_MAX ? _T("...") : _T(""),
+                m_strAction.Right(DESCRIPTION_ACTION_MAX));
+
+            timerWnd.ShowBalloon(str, id);
+        }
     }
 }

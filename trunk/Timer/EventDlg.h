@@ -5,28 +5,33 @@
 #include "afxdtctl.h"
 #include "afxwin.h"
 
-class CTimerEventDlg : public CDialog
+class CEventDlg : public CDialog
 {
 public:
-	CTimerEventDlg(CWnd* pParent = NULL);
+	CEventDlg(CTimerWnd &timerWnd, CWnd* pParent = NULL);
 
-	enum { IDD = IDD_TIMER_EVENT };
+	enum { IDD = IDD_EVENT };
 
-    void SetTimerEvent(CTimerEvent timerEvent);
+    void SetAdd(HICON hIcon);
+    void SetEdit(HICON hIcon, CTimerEvent timerEvent);
     CTimerEvent GetTimerEvent();
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);
 	virtual BOOL OnInitDialog();
 
+    afx_msg void OnBnClickedTest();
     afx_msg void OnBnClickedDelete();
 	DECLARE_MESSAGE_MAP()
 
 protected:
+    CDateTimeCtrl m_IntervalTimeCtrl;
     CButton m_DeleteCtrl;
     CButton m_OkCtrl;
 
     bool m_bNew;
+    HICON m_hIcon;
+    CTimerWnd &m_TimerWnd;
 
     BOOL m_bEnabled;
     COleDateTime m_BaseDate;
