@@ -1,50 +1,61 @@
 #include "stdafx.h"
 #include "TimerApp.h"
-#include "TimerEventDlg.h"
+#include "EventDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
-CTimerEventDlg::CTimerEventDlg(CWnd* pParent)
-	: CDialog(CTimerEventDlg::IDD, pParent)
+CEventDlg::CEventDlg(CTimerWnd &timerWnd, CWnd* pParent)
+	: CDialog(CEventDlg::IDD, pParent)
     , m_bNew(true)
+    , m_hIcon(NULL)
+    , m_TimerWnd(timerWnd)
+    , m_bEnabled(TRUE)
     , m_BaseDate(COleDateTime::GetCurrentTime())
     , m_BaseTime(m_BaseDate)
-    , m_IntervalTime(m_BaseDate.GetYear(), m_BaseDate.GetMonth(), m_BaseDate.GetDay(), 0, 0, 0)
-    , m_bEnabled(TRUE)
+    , m_IntervalTime(m_BaseDate)
+    , m_strMessage(_T("Timer event raised!\r\nDelete this message text to show no message."))
 {
+    m_IntervalTime.SetTime(0, 0, 0);
 }
 
-void CTimerEventDlg::DoDataExchange(CDataExchange* pDX)
+void CEventDlg::DoDataExchange(CDataExchange* pDX)
 {
     CDialog::DoDataExchange(pDX);
     DDX_MonthCalCtrl(pDX, IDC_MONTHCALENDAR, m_BaseDate);
     DDX_DateTimeCtrl(pDX, IDC_DATETIMEPICKER_TIME, m_BaseTime);
     DDX_DateTimeCtrl(pDX, IDC_DATETIMEPICKER_REPEAT, m_IntervalTime);
+    DDX_Check(pDX, IDC_CHECK_ENABLED, m_bEnabled);
     DDX_Control(pDX, ID_DELETE, m_DeleteCtrl);
     DDX_Text(pDX, IDC_EDIT_MESSAGE, m_strMessage);
     DDX_Text(pDX, IDC_EDIT_ACTION, m_strAction);
     DDX_Control(pDX, IDOK, m_OkCtrl);
-    DDX_Check(pDX, IDC_CHECK1, m_bEnabled);
+    DDX_Control(pDX, IDC_DATETIMEPICKER_REPEAT, m_IntervalTimeCtrl);
 }
 
-BEGIN_MESSAGE_MAP(CTimerEventDlg, CDialog)
-    ON_BN_CLICKED(ID_DELETE, &CTimerEventDlg::OnBnClickedDelete)
+BEGIN_MESSAGE_MAP(CEventDlg, CDialog)
+    ON_BN_CLICKED(ID_DELETE, &CEventDlg::OnBnClickedDelete)
+    ON_BN_CLICKED(ID_TEST, &CEventDlg::OnBnClickedTest)
 END_MESSAGE_MAP()
 
-BOOL CTimerEventDlg::OnInitDialog()
+BOOL CEventDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-	SetIcon(theApp.GetIcon(), TRUE);
-	SetIcon(theApp.GetIcon(), FALSE);
+	SetIcon(m_hIcon, TRUE);
+	SetIcon(m_hIcon, FALSE);
 
     if (m_bNew)
     {
         SetWindowText(_T("New Mareq Timer Event"));
         m_OkCtrl.SetWindowText(_T("&Add"));
         m_DeleteCtrl.ShowWindow(SW_HIDE);
+
+        // To force 00:00:00 time it the control.
+        m_IntervalTimeCtrl.SetTime(m_IntervalTime);
+        m_IntervalTime.SetStatus(COleDateTime::null);
+        m_IntervalTimeCtrl.SetTime(m_IntervalTime);
     }
     else
     {
@@ -55,14 +66,29 @@ BOOL CTimerEventDlg::OnInitDialog()
 	return TRUE;
 }
 
-void CTimerEventDlg::OnBnClickedDelete()
+void CEventDlg::OnBnClickedTest()
+{
+    if (!UpdateData(TRUE))
+        return;
+
+    GetTimerEvent().Activate(m_TimerWnd, SMD_NONE);
+}
+
+
+void CEventDlg::OnBnClickedDelete()
 {
     EndDialog(ID_DELETE);
 }
 
-void CTimerEventDlg::SetTimerEvent(CTimerEvent timerEvent)
+void CEventDlg::SetAdd(HICON hIcon)
+{
+    m_hIcon = hIcon;
+}
+
+void CEventDlg::SetEdit(HICON hIcon, CTimerEvent timerEvent)
 {
     m_bNew = false;
+    m_hIcon = hIcon;
 
     m_bEnabled = timerEvent.GetEnabled();
     m_BaseDate = timerEvent.GetBaseDateTime();
@@ -82,14 +108,15 @@ void CTimerEventDlg::SetTimerEvent(CTimerEvent timerEvent)
     m_strAction = timerEvent.GetAction();
 }
 
-CTimerEvent CTimerEventDlg::GetTimerEvent()
+CTimerEvent CEventDlg::GetTimerEvent()
 {
     CTimerEvent timerEvent;
     timerEvent.SetEnabled(m_bEnabled == TRUE);
     timerEvent.SetBaseDateTime(COleDateTime(m_BaseDate.GetYear(), m_BaseDate.GetMonth(), m_BaseDate.GetDay(),
         m_BaseTime.GetHour(), m_BaseTime.GetMinute(), m_BaseTime.GetSecond()));
 
-    int interval = (m_IntervalTime.GetHour() * 3600) + (m_IntervalTime.GetMinute() * 60) + m_IntervalTime.GetSecond();
+    int interval = m_IntervalTime.GetStatus() == COleDateTime::valid ?
+        (m_IntervalTime.GetHour() * 3600) + (m_IntervalTime.GetMinute() * 60) + m_IntervalTime.GetSecond() : 0;
     timerEvent.SetRepeatInterval(interval);
 
     timerEvent.SetMessage(m_strMessage);
