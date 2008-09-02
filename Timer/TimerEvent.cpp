@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "TimerEvent.h"
 #include "TimerApp.h"
-#include "math.h"
+
+#include <math.h>
+#include <mmsystem.h>
 
 #pragma warning(disable: 4311)
 
@@ -9,7 +11,8 @@ CTimerEvent::CTimerEvent()
 :
     m_bEnabled(true),
     m_BaseDateTime(COleDateTime::GetCurrentTime()),
-    m_RepeatInterval(0)
+    m_RepeatInterval(0),
+    m_strRingTone(RINGTONE_DEFAULT)
 {
 }
 
@@ -28,6 +31,9 @@ bool CTimerEvent::Load(int id)
     m_strMessage = theApp.GetProfileString(strSection, PROFILE_EVENT_MESSAGE);
     m_strAction = theApp.GetProfileString(strSection, PROFILE_EVENT_ACTION);
     m_strActionParams = theApp.GetProfileString(strSection, PROFILE_EVENT_ACTION_PARAMS);
+    m_strRingTone = theApp.GetProfileString(strSection, PROFILE_EVENT_RING_TONE);
+    if (m_strRingTone.IsEmpty())
+        m_strRingTone = RINGTONE_DEFAULT;
 
     return IsValid();
 }
@@ -43,6 +49,7 @@ void CTimerEvent::Save(int id)
     theApp.WriteProfileString(strSection, PROFILE_EVENT_MESSAGE, m_strMessage);
     theApp.WriteProfileString(strSection, PROFILE_EVENT_ACTION, m_strAction);
     theApp.WriteProfileString(strSection, PROFILE_EVENT_ACTION_PARAMS, m_strActionParams);
+    theApp.WriteProfileString(strSection, PROFILE_EVENT_RING_TONE, m_strRingTone);
 }
 
 bool CTimerEvent::IsValid()
@@ -126,6 +133,20 @@ void CTimerEvent::Activate(CTimerWnd &timerWnd, int id)
             timerWnd.ShowBalloon(str, id);
         }
     }
+
+    // Sound.
+    if (m_strRingTone == RINGTONE_BEEP)
+        MessageBeep(-1);
+    if (m_strRingTone == RINGTONE_ASTERISK)
+        MessageBeep(MB_ICONASTERISK);
+    else if (m_strRingTone == RINGTONE_EXCLAMATION)
+        MessageBeep(MB_ICONEXCLAMATION);
+    else if (m_strRingTone == RINGTONE_HAND)
+        MessageBeep(MB_ICONHAND);
+    else if (m_strRingTone == RINGTONE_QUESTION)
+        MessageBeep(MB_ICONQUESTION);
+    else if (m_strRingTone != RINGTONE_DEFAULT)
+        PlaySound(m_strRingTone, NULL, SND_APPLICATION|SND_ASYNC|SND_FILENAME);
 }
 
 bool CTimerEvent::IsOld()
