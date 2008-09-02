@@ -7,9 +7,17 @@
 #define PROFILE_EVENT_MESSAGE _T("Message")
 #define PROFILE_EVENT_ACTION _T("Action")
 #define PROFILE_EVENT_ACTION_PARAMS _T("ActionParams")
+#define PROFILE_EVENT_RING_TONE _T("RingTone")
 
 #define DESCRIPTION_MESSAGE_MAX 30
 #define DESCRIPTION_ACTION_MAX 30
+
+#define RINGTONE_DEFAULT _T("Default")
+#define RINGTONE_BEEP _T("System Beep")
+#define RINGTONE_ASTERISK _T("System Asterisk")
+#define RINGTONE_EXCLAMATION _T("System Exclamation")
+#define RINGTONE_HAND _T("System Hand")
+#define RINGTONE_QUESTION _T("System Question")
 
 class CTimerWnd;
 
@@ -25,6 +33,7 @@ public:
     void SetMessage(CString strMessage) { m_strMessage = strMessage; }
     void SetAction(CString strAction) { m_strAction = strAction; }
     void SetActionParams(CString strActionParams) { m_strActionParams = strActionParams; }
+    void SetRingTone(CString strRingTone) { m_strRingTone = strRingTone; }
 
     bool GetEnabled() { return m_bEnabled; }
     COleDateTime GetBaseDateTime() { return m_BaseDateTime; }
@@ -32,6 +41,7 @@ public:
     CString GetMessage() { return m_strMessage; }
     CString GetAction() { return m_strAction; }
     CString GetActionParams() { return m_strActionParams; }
+    CString GetRingTone() { return m_strRingTone; }
 
     bool Load(int id);
     void Save(int id);
@@ -51,6 +61,7 @@ protected:
     CString m_strMessage;
     CString m_strAction;
     CString m_strActionParams;
+    CString m_strRingTone;
 
     friend class CArray<CTimerEvent>;
 };

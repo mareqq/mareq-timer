@@ -71,7 +71,7 @@ IDR_ICON                ICON                    "res\\Timer.ico"
 // Dialog
 //
 
-IDD_EVENT DIALOGEX 0, 0, 377, 163
+IDD_EVENT DIALOGEX 0, 0, 377, 176
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
@@ -85,13 +85,16 @@ BEGIN
     EDITTEXT        IDC_EDIT_MESSAGE,251,30,119,54,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
     LTEXT           "Ta&ke action:",IDC_STATIC,195,95,50,8
     EDITTEXT        IDC_EDIT_ACTION,251,93,119,15,ES_AUTOHSCROLL
-    CONTROL         "&Enabled",IDC_CHECK_ENABLED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,144,106,10
-    PUSHBUTTON      "&Delete",ID_DELETE,132,140,50,16
-    DEFPUSHBUTTON   "",IDOK,266,140,50,16
-    PUSHBUTTON      "&Cancel",IDCANCEL,320,140,50,16
-    PUSHBUTTON      "&Test",ID_TEST,186,140,50,16
     LTEXT           "Action params:",IDC_STATIC,195,111,50,8
     EDITTEXT        IDC_EDIT_ACTION_PARAMS,251,109,119,15,ES_AUTOHSCROLL
+    LTEXT           "Ring tone:",IDC_STATIC,7,134,50,8
+    COMBOBOX        IDC_COMBO_RING_TONE,62,132,282,96,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Enabled",IDC_CHECK_ENABLED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,159,106,10
+    PUSHBUTTON      "&Delete",ID_DELETE,132,153,50,16
+    PUSHBUTTON      "&Test",ID_TEST,186,153,50,16
+    DEFPUSHBUTTON   "",IDOK,266,153,50,16
+    PUSHBUTTON      "&Cancel",IDCANCEL,320,153,50,16
+    PUSHBUTTON      "...",IDC_BUTTON_FILE,345,131,25,14
 END
 
 IDD_ABOUT DIALOGEX 0, 0, 227, 99
@@ -116,8 +119,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,0
- PRODUCTVERSION 1,0,0,0
+ FILEVERSION 1,1,0,0
+ PRODUCTVERSION 1,1,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -134,12 +137,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Mareq"
             VALUE "FileDescription", "Mareq Timer Executable"
-            VALUE "FileVersion", "1.0.0.0"
+            VALUE "FileVersion", "1.1.0.0"
             VALUE "InternalName", "Timer.exe"
             VALUE "LegalCopyright", "Copyright (c) 2008 Mareq.  All rights reserved."
             VALUE "OriginalFilename", "Timer.exe"
             VALUE "ProductName", "Mareq Timer"
-            VALUE "ProductVersion", "1.0.0.0"
+            VALUE "ProductVersion", "1.1.0.0"
         END
     END
     BLOCK "VarFileInfo"
@@ -162,7 +165,7 @@ BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 370
         TOPMARGIN, 7
-        BOTTOMMARGIN, 156
+        BOTTOMMARGIN, 169
     END
 
     IDD_ABOUT, DIALOG

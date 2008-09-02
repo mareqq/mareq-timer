@@ -23,6 +23,7 @@ protected:
     afx_msg void OnBnClickedTest();
     afx_msg void OnBnClickedDelete();
     afx_msg void OnEnChangeEditAction();
+    afx_msg void OnBnClickedButtonFile();
 	DECLARE_MESSAGE_MAP()
 
 protected:
@@ -31,6 +32,7 @@ protected:
     CEdit m_ActionParamsCtrl;
     CButton m_DeleteCtrl;
     CButton m_OkCtrl;
+    CComboBox m_RingTone;
 
     bool m_bNew;
     HICON m_hIcon;
@@ -43,4 +45,5 @@ protected:
     CString m_strMessage;
     CString m_strAction;
     CString m_strActionParams;
+    CString m_strRingTone;
 };
